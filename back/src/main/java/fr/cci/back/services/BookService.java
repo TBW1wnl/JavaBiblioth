@@ -1,5 +1,6 @@
 package fr.cci.back.services;
 
+import fr.cci.back.DTOs.LoanDTO;
 import fr.cci.back.entities.Book;
 import fr.cci.back.entities.Loan;
 import fr.cci.back.payloads.requests.SaveBookDTO;
@@ -47,8 +48,13 @@ public class BookService {
         dtoBooks.setTitle(entity.getTitle());
         dtoBooks.setAuthor(entity.getAuthor());
         dtoBooks.setIsbn(entity.getIsbn());
-        List<String> loans = entity.getLoan().stream()
-                .map(Loan::toString)
+        List<LoanDTO> loans = entity.getLoan().stream()
+                .map(loan -> {
+                    LoanDTO dto = new LoanDTO();
+                    dto.setLoanDate(loan.getLoanDate());
+                    dto.setReturnDate(loan.getReturnDate());
+                    return dto;
+                })
                 .collect(Collectors.toList());
 
         dtoBooks.setLoans(loans);

@@ -1,5 +1,8 @@
 package fr.cci.back.payloads.responses;
 
+import fr.cci.back.DTOs.LoanDTO;
+import fr.cci.back.entities.Loan;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,11 +10,11 @@ public class GetBookByTitleResponseDTO {
     private String title;
     private String author;
     private String isbn;
-    private List<String> loans = new ArrayList<String>();
+    private List<LoanDTO> loans = new ArrayList<LoanDTO>();
 
     public GetBookByTitleResponseDTO() {}
 
-    public GetBookByTitleResponseDTO(String title, String author, String isbn, List<String> loans) {
+    public GetBookByTitleResponseDTO(String title, String author, String isbn, List<LoanDTO> loans) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
@@ -42,11 +45,11 @@ public class GetBookByTitleResponseDTO {
         this.isbn = isbn;
     }
 
-    public List<String> getLoans() {
+    public List<LoanDTO> getLoans() {
         return loans;
     }
 
-    public void setLoans(List<String> loans) {
+    public void setLoans(List<LoanDTO> loans) {
         this.loans = loans;
     }
 }

@@ -1,5 +1,8 @@
 package fr.cci.back.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,10 +16,12 @@ public class Loan {
 
     @ManyToOne
     @JoinColumn(name = "idCustomer")
+    @JsonIgnore
     private Customer customer;
 
     @ManyToOne
     @JoinColumn(name = "idBook")
+    @JsonIgnore
     private Book book;
 
     public Loan() {}
@@ -75,5 +80,15 @@ public class Loan {
                 ", customer=" + customer +
                 ", book=" + book +
                 '}';
+    }
+
+    public String toJson() {
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            return mapper.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return "{}";
+        }
     }
 }
