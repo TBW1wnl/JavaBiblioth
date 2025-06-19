@@ -1,0 +1,20 @@
+CREATE TABLE BOOKS (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255),
+    author VARCHAR(255),
+    isbn VARCHAR(255) UNIQUE
+);
+
+CREATE TABLE CUSTOMERS (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255)
+);
+
+CREATE TABLE LOANS (
+    id SERIAL PRIMARY KEY,
+    loan_date VARCHAR(255),
+    return_date VARCHAR(255),
+    idCustomer BIGINT REFERENCES CUSTOMERS(id),
+    idBook BIGINT REFERENCES BOOKS(id)
+);
