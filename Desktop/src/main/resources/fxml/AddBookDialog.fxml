@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fr.cci.desktop.controllers.BookController"
+      spacing="10" alignment="CENTER" prefWidth="400" prefHeight="350">
+
+    <padding>
+        <Insets top="20" bottom="20" left="20" right="20"/>
+    </padding>
+
+    <Label text="Ajouter un livre" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="titleField" promptText="Titre"/>
+    <TextField fx:id="authorField" promptText="Auteur"/>
+    <TextField fx:id="isbnField" promptText="ISBN"/>
+
+    <Button text="Ajouter" onAction="#handleAddBook"/>
+</VBox>
