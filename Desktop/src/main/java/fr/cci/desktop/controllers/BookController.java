@@ -11,9 +11,12 @@ import java.net.URI;
 import java.net.http.*;
 
 public class BookController {
-    @FXML private TextField titleField;
-    @FXML private TextField authorField;
-    @FXML private TextField isbnField;
+    @FXML
+    private TextField titleField;
+    @FXML
+    private TextField authorField;
+    @FXML
+    private TextField isbnField;
 
     private final ApiConstants apiConstants = ApiConstants.getInstance();
 

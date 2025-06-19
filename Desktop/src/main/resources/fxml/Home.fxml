@@ -33,6 +33,8 @@
         <Label fx:id="titleLabel"/>
         <Label text="Auteur :"/>
         <Label fx:id="authorLabel"/>
+        <Label text="ISBN :"/>
+        <Label fx:id="isbn"/>
     </VBox>
 
 </HBox>
