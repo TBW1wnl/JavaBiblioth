@@ -13,6 +13,7 @@ import java.net.http.*;
 public class BookController {
     @FXML private TextField titleField;
     @FXML private TextField authorField;
+    @FXML private TextField isbnField;
 
     private final ApiConstants apiConstants = ApiConstants.getInstance();
 
@@ -21,6 +22,7 @@ public class BookController {
         Book newBook = new Book();
         newBook.setTitle(titleField.getText());
         newBook.setAuthor(authorField.getText());
+        newBook.setIsbn(isbnField.getText());
 
         try {
             ObjectMapper mapper = new ObjectMapper();
