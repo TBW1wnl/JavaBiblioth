@@ -1,0 +1,24 @@
+#root {
+    -fx-padding: 20;
+}
+
+VBox {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 10;
+    -fx-spacing: 10;
+}
+
+ScrollPane {
+    -fx-background-color: transparent;
+}
+
+Button {
+    -fx-background-color: #0078D7;
+    -fx-text-fill: white;
+    -fx-padding: 8 16;
+    -fx-background-radius: 4;
+}
+
+Label {
+    -fx-font-size: 14px;
+}

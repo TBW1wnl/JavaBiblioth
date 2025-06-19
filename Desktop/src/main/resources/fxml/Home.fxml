@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fr.cci.desktop.controllers.HomeController"
+      spacing="10"
+      prefHeight="600" prefWidth="900"
+      id="root">
+
+    <!-- Colonne gauche : Livres -->
+    <VBox fx:id="leftPane" spacing="10">
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <ListView fx:id="bookList"/>
+        </ScrollPane>
+        <Button fx:id="addBookButton" text="Ajouter un livre"/>
+    </VBox>
+
+    <!-- Colonne centre : Emprunts -->
+    <VBox fx:id="centerPane" spacing="10">
+        <Label text="Emprunts"/>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <ListView fx:id="borrowList"/>
+        </ScrollPane>
+    </VBox>
+
+    <!-- Colonne droite : Détails -->
+    <VBox fx:id="rightPane" spacing="10">
+        <Label text="Détails"/>
+        <Label text="Titre :"/>
+        <Label fx:id="titleLabel"/>
+        <Label text="Auteur :"/>
+        <Label fx:id="authorLabel"/>
+    </VBox>
+
+</HBox>
