@@ -1,13 +1,10 @@
-package fr.cci.desktop.models;
+package fr.cci.desktop.DTOs;
 
-import java.util.List;
-
-public class Book {
+public class BookDTO {
     private Long id;
     private String title;
     private String author;
     private String isbn;
-    private List<Loan> loans;
 
     public Long getId() { return id; }
 
@@ -24,10 +21,6 @@ public class Book {
     public String getIsbn() { return isbn; }
 
     public void setIsbn(String isbn) { this.isbn = isbn; }
-
-    public List<Loan> getLoans() { return loans; }
-
-    public void setLoans(List<Loan> loans) { this.loans = loans; }
 
     public String toString() {
         return title + " - " + author;

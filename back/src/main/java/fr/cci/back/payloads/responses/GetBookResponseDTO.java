@@ -1,6 +1,7 @@
 package fr.cci.back.payloads.responses;
 
 public class GetBookResponseDTO {
+    private Long id;
     private String title;
     private String author;
     private String isbn;
@@ -11,6 +12,14 @@ public class GetBookResponseDTO {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long bookId) {
+        this.id = bookId;
     }
 
     public String getTitle() {

@@ -28,6 +28,7 @@ public class BookService {
 
         entityBooks.forEach(entity -> {
             GetBookResponseDTO dto = new GetBookResponseDTO();
+            dto.setId(entity.getId());
             dto.setTitle(entity.getTitle());
             dto.setAuthor(entity.getAuthor());
             dto.setIsbn(entity.getIsbn());
@@ -37,8 +38,8 @@ public class BookService {
         return dtoBooks;
     }
 
-    public GetBookByTitleResponseDTO getByTitle(String bookname) {
-        Book entity = bookRepository.findByTitle(bookname);
+    public GetBookByTitleResponseDTO getById(Long bookId) {
+        Book entity = bookRepository.findBookById(bookId);
 
         if (entity == null) {
             return null;

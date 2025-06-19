@@ -17,9 +17,9 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @GetMapping("/{booktitle}")
-    public GetBookByTitleResponseDTO getByUsername(@PathVariable(value = "booktitle") String bookname) {
-        return bookService.getByTitle(bookname);
+    @GetMapping("/{bookId}")
+    public GetBookByTitleResponseDTO getByUsername(@PathVariable(value = "bookId") Long bookId) {
+        return bookService.getById(bookId);
     }
 
     @GetMapping

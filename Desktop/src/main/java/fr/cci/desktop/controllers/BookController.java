@@ -1,7 +1,7 @@
 package fr.cci.desktop.controllers;
 
 import fr.cci.desktop.configurations.ApiConstants;
-import fr.cci.desktop.models.Book;
+import fr.cci.desktop.DTOs.BookDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -22,14 +22,14 @@ public class BookController {
 
     @FXML
     public void handleAddBook() {
-        Book newBook = new Book();
-        newBook.setTitle(titleField.getText());
-        newBook.setAuthor(authorField.getText());
-        newBook.setIsbn(isbnField.getText());
+        BookDTO newBookDTO = new BookDTO();
+        newBookDTO.setTitle(titleField.getText());
+        newBookDTO.setAuthor(authorField.getText());
+        newBookDTO.setIsbn(isbnField.getText());
 
         try {
             ObjectMapper mapper = new ObjectMapper();
-            String json = mapper.writeValueAsString(newBook);
+            String json = mapper.writeValueAsString(newBookDTO);
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(apiConstants.getAPI_URL("book")))

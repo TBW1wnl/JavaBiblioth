@@ -10,7 +10,6 @@
       prefHeight="600" prefWidth="900"
       id="root">
 
-    <!-- Colonne gauche : Livres -->
     <VBox fx:id="leftPane" spacing="10">
         <ScrollPane fitToWidth="true" fitToHeight="true">
             <ListView fx:id="bookList"/>
@@ -18,23 +17,19 @@
         <Button fx:id="addBookButton" text="Ajouter un livre"/>
     </VBox>
 
-    <!-- Colonne centre : Emprunts -->
     <VBox fx:id="centerPane" spacing="10">
         <Label text="Emprunts"/>
-        <ScrollPane fitToWidth="true" fitToHeight="true">
-            <ListView fx:id="borrowList"/>
-        </ScrollPane>
+        <ListView fx:id="loanList"/>
     </VBox>
 
-    <!-- Colonne droite : Détails -->
     <VBox fx:id="rightPane" spacing="10">
-        <Label text="Détails"/>
+        <Label text="Détails du livre"/>
         <Label text="Titre :"/>
         <Label fx:id="titleLabel"/>
         <Label text="Auteur :"/>
         <Label fx:id="authorLabel"/>
         <Label text="ISBN :"/>
-        <Label fx:id="isbn"/>
+        <Label fx:id="isbnLabel"/>
     </VBox>
 
 </HBox>
